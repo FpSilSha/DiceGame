@@ -1,9 +1,14 @@
 //A game revolving around different dice rolls.
 
+//Variables for health
+let healthPoolSmall = [10, 40, 60, 100]
+let healthPoolMedium = [150, 300, 450 600]
+let healthPoolLarge = [1000, 1500, 2000, 2500]
+
+let monsterHealth = randomChoiceFromArray(healthPool)
+
+
 //Takes an input as number of sides of a dice and "rolls".
-let healthPool = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-
-
 function diceRoller(numberOfSides){
 let result = Math.floor(Math.random() * numberOfSides)+1;
 }
@@ -14,5 +19,4 @@ function randomChoiceFromArray(arrayToRandomlyPickFrom){
 
 }
 // Health array to pull for random "opponent" health.
-let monster = randomChoiceFromArray(healthPool)
 
