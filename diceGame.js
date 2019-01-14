@@ -2,11 +2,10 @@
 
 //Variables for health
 let healthPoolSmall = [10, 40, 60, 100]
-let healthPoolMedium = [150, 300, 450 600]
+let healthPoolMedium = [150, 300, 450, 600]
 let healthPoolLarge = [1000, 1500, 2000, 2500]
 
-let monsterHealth = randomChoiceFromArray(healthPool)
-
+let monsterHealth = randomChoiceFromArray(healthPoolSmall)
 
 //Takes an input as number of sides of a dice and "rolls".
 function diceRoller(numberOfSides){
@@ -20,3 +19,10 @@ function randomChoiceFromArray(arrayToRandomlyPickFrom){
 }
 // Health array to pull for random "opponent" health.
 
+// Function to generate a new monster.
+function generateNewMonster(){
+	if (monsterHealth <=0){
+		monsterHealth = randomChoiceFromArray(healthPoolSmall);
+		alert("Monster defeated! New monster health at " + monsterHealth + "!");
+	}
+}
