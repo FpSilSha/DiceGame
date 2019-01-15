@@ -8,6 +8,7 @@ let healthPoolLarge = [1000, 1500, 2000, 2500];
 let monsterHealth = randomChoiceFromArray(healthPoolSmall);
 let damageVersusMonsterHealth = [healthPoolSmall, healthPoolMedium, healthPoolLarge]
 // Damage Variables
+let damageLevelUpgrades = [1, 5, 10, 25, 50, 75, 100, 150, 200]
 let damageDealingLevel = 1;
 //Misc Variables
 let cash = 0;
