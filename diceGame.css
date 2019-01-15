@@ -1,0 +1,10 @@
+
+.textFluffer{
+	font-size: 20px;
+	padding:15px;
+	border-style: solid;
+	border-color: gold;
+	
+	background: linear-gradient(to right, #41f7fd 0%,#13f3f7 40%,#02b4ba 100%);
+	}
+	
