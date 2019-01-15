@@ -14,6 +14,7 @@ let damage = diceRoller(damageDealingLevel)
 //Misc Variables
 let cash = 0;
 // Functions declared
+console.log("A monster claws it's way towards you with "+ monsterHealth+" hp");
 // Takes an input as number of sides of a dice and "rolls".
 function diceRoller(numberOfSides){
 let result = Math.floor(Math.random() * numberOfSides)+1;
@@ -46,7 +47,7 @@ function healthCheck(){
 
 		generateNewMonster(damageVersusMonsterHealth[0]);
 		alert("Monster defeated! New monster health at " + monsterHealth + "!");
-		console.log("The monster spawns with" +monsterHealth+" hp!")
+		console.log("The monster spawns with " +monsterHealth+" hp!")
 }
 	else{
 		console.log("The monster is at " + monsterHealth + " hp, keep going!")
