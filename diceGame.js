@@ -31,7 +31,7 @@ function generateNewMonster(healthPool){
 }		
 	
 
-
+// Function for health changes. Both deals damage and calls for replacement monster.
 function attackAndHealthCheck(){
 	monsterHealth = monsterHealth - damageDealingLevel;
 	if (monsterHealth <=0){
