@@ -9,12 +9,14 @@ let monsterHealth = randomChoiceFromArray(healthPoolSmall);
 let damageVersusMonsterHealth = [healthPoolSmall, healthPoolMedium, healthPoolLarge]
 // Damage Variables
 let damageLevelUpgrades = [1, 5, 10, 25, 50, 75, 100, 150, 200]
-let damageDealingLevel = 1;
+let i = 0;
+let damageDealingLevel = damageLevelUpgrades[i];
 let damage = diceRoller(damageDealingLevel)
 //Misc Variables
 let cash = 0;
+let upgradeCost = 0;
 // Functions declared
-console.log("A monster claws it's way towards you with "+ monsterHealth+" hp");
+alert("A monster claws it's way towards you with "+ monsterHealth+" hp");
 // Takes an input as number of sides of a dice and "rolls".
 function diceRoller(numberOfSides){
 let result = Math.floor(Math.random() * numberOfSides)+1;
@@ -46,18 +48,18 @@ function healthCheck(){
 	if (monsterHealth <=0){
 
 		generateNewMonster(damageVersusMonsterHealth[0]);
-		alert("Monster defeated! New monster health at " + monsterHealth + "!");
-		console.log("The monster spawns with " +monsterHealth+" hp!")
+		
+		document.getElementById("outputBox").innerHTML = ("A new monster spawns with " +monsterHealth+" hp!");
 }
 	else{
-		console.log("The monster is at " + monsterHealth + " hp, keep going!")
+		document.getElementById("outputBox").innerHTML = ("The monster is at " + monsterHealth + " hp, keep going!")
 	}
 
 }
 
 function lootDrop(){
 cash += damage
-console.log("You now have " + cash + " cash monies!")
+	document.getElementById("bank").innerHTML =("Cash Monies value: "+cash+" CM")
 }
 
 function clickActions(){

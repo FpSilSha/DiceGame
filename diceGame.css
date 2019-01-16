@@ -7,4 +7,11 @@
 	
 	background: linear-gradient(to right, #41f7fd 0%,#13f3f7 40%,#02b4ba 100%);
 	}
-	
+
+.textAligL{
+text-align: left;
+}
+
+.textAlignC{
+	text-align: center;
+}
