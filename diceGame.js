@@ -9,13 +9,13 @@ let monsterHealth = randomChoiceFromArray(healthPoolSmall);
 let damageVersusMonsterHealth = [healthPoolSmall, healthPoolMedium, healthPoolLarge];
 // Damage Variables
 let damageLevelUpgrades = [1, 5, 10, 25, 50, 75, 100, 150, 200];
-let i = 0;
-//////////let damageDealingLevel = damageLevelUpgrades[i]; Do I need this? Will see if seperately storing this matters later
 let damage;
 //Misc Variables
 let shopPrice = [100, 250, 600, 1000, 1450, 2000, 3000, 5000];
 let cash = 0;
-//////////let upgradeCost = shopPrice[i]; Do I need this? Will see if seperately storing this matters later
+let monsterDrop = 0;
+let i = 0;
+let j = 0;
 // Functions declared
 alert("A monster claws it's way towards you with "+ monsterHealth+" hp");
 // Takes an input as number of sides of a dice and "rolls".
@@ -39,17 +39,17 @@ function generateNewMonster(healthPool){
 	
 
 // Function for health changes. Deals damage to monsters.
-
-
 function attack(){
 	monsterHealth -= damage;
+	monsterDrop += damage
 }
 
 // Checks health to report value to user or initialize a new monster.
 function healthCheck(){
 	if (monsterHealth <=0){
-
-		generateNewMonster(damageVersusMonsterHealth[0]);
+		lootDrop();
+		healthChoice(i)
+		generateNewMonster(damageVersusMonsterHealth[j]);
 		
 		document.getElementById("outputBox").innerHTML = ("A new monster spawns with " +monsterHealth+" hp!");
 }
@@ -60,7 +60,8 @@ function healthCheck(){
 }
 // Function that handles adding money earned from attacking into a capture variable.
 function lootDrop(){
-cash += damage;
+	cash += monsterDrop;
+	monsterDrop = 0;
 	document.getElementById("bank").innerHTML =("Cash Monies value: "+cash+" CM");
 }
 // Function made to coincide with an upgrade button. Gives appropiate responses
@@ -80,16 +81,30 @@ function upgradeDamage(){
 
 	}
 }
-// 
+
+
+// Function that updates damage variable.
 function setDamage(){
  	damage = diceRoller(damageLevelUpgrades[i]);
+}
+
+function healthChoice(upgradePosition){
+	if (upgradePosition<4){
+		j=0
+	} 
+	else if (upgradePosition < 6){
+		j=1
+	}
+	else {
+		j=2
+	}
 }
 // The functions that runs the main constraints of the game to actually "play" it.
 function clickActions(){
 	setDamage();
 	attack();
 	healthCheck();
-	lootDrop();
+	
 	
 }
 
