@@ -66,17 +66,18 @@ cash += damage;
 // Function made to coincide with an upgrade button. Gives appropiate responses
 // for upgrade attempts, while also incrementing 'i' under correct conditions.
 function upgradeDamage(){
-if (cash >= upgradeCost && i<=damageLevelUpgrades.length){
-	i++
-	alert("Your power grows...and yet you crave MORE...");
-}
+	if (cash >= upgradeCost && i<=damageLevelUpgrades.length){
+		i++
+		alert("Your power grows...and yet you crave MORE...");
+	}
 	else if (cash >= upgradeCost && i === damageLevelUpgrades.length){
 		alert("Your power level is already off the charts! WE CAN'T GO HIGHER!");
 	}
-	else (cash < upgradeCost){
+	else if (cash < upgradeCost){
 		alert("Maybe I need to increase the text size if you think you have enough CM");
 
 	}
+}
 
 // The functions that runs the main constraints of the game to actually "play" it.
 function clickActions(){
