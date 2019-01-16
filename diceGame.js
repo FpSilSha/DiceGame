@@ -70,10 +70,10 @@ function upgradeDamage(){
 	if (cash >= shopPrice[i] && i<=damageLevelUpgrades.length){
 		cash -=shopPrice[i]
 		i++
-		
+		document.getElementById("bank").innerHTML =("Cash Monies value: "+cash+" CM");
 		alert("Your power grows...and yet you crave MORE...");
 	}
-	else if (cash >= shopPrice[i] && i === damageLevelUpgrades.length){
+	else if ( i === shopPrice.length){
 		alert("Your power level is already off the charts! WE CAN'T GO HIGHER!");
 	}
 	else if (cash < shopPrice[i]){
