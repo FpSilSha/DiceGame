@@ -11,11 +11,11 @@ let damageVersusMonsterHealth = [healthPoolSmall, healthPoolMedium, healthPoolLa
 let damageLevelUpgrades = [1, 5, 10, 25, 50, 75, 100, 150, 200];
 let i = 0;
 //////////let damageDealingLevel = damageLevelUpgrades[i]; Do I need this? Will see if seperately storing this matters later
-let damage = diceRoller(damageLevelUpgrades[i]);
+let damage;
 //Misc Variables
 let shopPrice = [100, 250, 600, 1000, 1450, 2000, 3000, 5000];
 let cash = 0;
-let upgradeCost = shopPrice[i];
+//////////let upgradeCost = shopPrice[i]; Do I need this? Will see if seperately storing this matters later
 // Functions declared
 alert("A monster claws it's way towards you with "+ monsterHealth+" hp");
 // Takes an input as number of sides of a dice and "rolls".
@@ -66,21 +66,27 @@ cash += damage;
 // Function made to coincide with an upgrade button. Gives appropiate responses
 // for upgrade attempts, while also incrementing 'i' under correct conditions.
 function upgradeDamage(){
-	if (cash >= upgradeCost && i<=damageLevelUpgrades.length){
+	if (cash >= shopPrice[i] && i<=damageLevelUpgrades.length){
+		cash -=shopPrice[i]
 		i++
+		
 		alert("Your power grows...and yet you crave MORE...");
 	}
-	else if (cash >= upgradeCost && i === damageLevelUpgrades.length){
+	else if (cash >= shopPrice[i] && i === damageLevelUpgrades.length){
 		alert("Your power level is already off the charts! WE CAN'T GO HIGHER!");
 	}
-	else if (cash < upgradeCost){
+	else if (cash < shopPrice[i]){
 		alert("Maybe I need to increase the text size if you think you have enough CM");
 
 	}
 }
-
+// 
+function setDamage(){
+ 	damage = diceRoller(damageLevelUpgrades[i]);
+}
 // The functions that runs the main constraints of the game to actually "play" it.
 function clickActions(){
+	setDamage();
 	attack();
 	healthCheck();
 	lootDrop();
