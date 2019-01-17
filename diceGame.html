@@ -14,6 +14,13 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	
 </head>
+<style type="text/css">
+body {
+	background-color:#3a4660;
+	background: linear-gradient(to bottom, #3a4660 0%, #9fabc6 100% );
+
+}
+</style>
 <body>
 	
 	<div class ="textAlignC">
@@ -31,25 +38,28 @@
 	</div>
 
 
-	<div class="textAligL">
-		<p id = "bank">
+	<div class="textAligL"id="divContainerCM">
+		<p id = "bank" class="">
 	  Cash Monies value: 0 CM
 	    </p>
+	
 	</div>
-	<div class="textAlignC">
+<br>
+	<div class="textAlignC"id="divContainerOB">
 		 <p id="outputBox">
 		 	Are you prepared?
 		 </p>
 	</div>
+	<br>
 	<div class="textAlignC">
-		 <button id="mainButton" onclick="clickActions()">
+		 <button id="mainButton" onclick="clickActions()" class="buttonFluffer">
 		 ATTACK!!!
 		</button>
 	</div>
 	<br>
-	<br>
+	
 	<div class="textAlignC">
-		<button id="upgradeButton" onclick="upgradeDamage()">
+		<button id="upgradeButton" onclick="upgradeDamage()" class="buttonFluffer">
 			~Upgrade Powah~
 		</button>
 	</div>
@@ -59,4 +69,5 @@
 
 
 </body>
+
 </html>
