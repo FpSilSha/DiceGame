@@ -67,3 +67,13 @@ border-color: yellow;
 	border-color: white;
 	background-color: lightgrey;
 }
+
+#divContainerUC{
+	margin-left: 250px;
+	margin-right: 230px;
+	margin-bottom: 0px;
+	padding:10px;
+	border-style: solid;
+	border-color: white;
+	background-color: gold;
+}

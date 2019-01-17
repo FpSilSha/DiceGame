@@ -2,9 +2,9 @@
  
 // Original Variables
 // Health variables
-let healthPoolSmall = [10, 40, 60, 100];
-let healthPoolMedium = [150, 300, 450, 600];
-let healthPoolLarge = [1000, 1500, 2000, 2500];
+let healthPoolSmall = [10, 20, 40, 60, 80, 100];
+let healthPoolMedium = [150, 300, 450, 600, 800];
+let healthPoolLarge = [ 1500, 2000, 2500, 4000];
 let monsterHealth = randomChoiceFromArray(healthPoolSmall);
 let damageVersusMonsterHealth = [healthPoolSmall, healthPoolMedium, healthPoolLarge];
 // Damage Variables
@@ -16,8 +16,10 @@ let cash = 0;
 let monsterDrop = 0;
 let i = 0;
 let j = 0;
+
 // Functions declared
 alert("A monster claws it's way towards you with "+ monsterHealth+" hp");
+
 // Takes an input as number of sides of a dice and "rolls".
 function diceRoller(numberOfSides){
 let result = Math.floor(Math.random() * numberOfSides)+1;
@@ -70,6 +72,7 @@ function upgradeDamage(){
 	if (cash >= shopPrice[i] && i<=damageLevelUpgrades.length){
 		cash -=shopPrice[i]
 		i++
+		document.getElementById("divContainerUC").innerHTML = ("Current Price for next upgrade is "+ shopPrice[i]+"CM.");
 		document.getElementById("bank").innerHTML =("Cash Monies value: "+cash+" CM");
 		alert("Your power grows...and yet you crave MORE...");
 	}
