@@ -19,12 +19,12 @@ I went about this thinking: How does the standard clicker game work?
 My reference for this is the game Clicker Heroes.
 
 The code entails:
--A health pool for small/medium/large monsters
--An array of the health pools
--Damage upgrades array
--Shop price array
--Variables for all the above
--RNG function for monster health decicison, damage done
--Monster spawn function
--Damage dealt and damage upgrade functions
--Function for on click html action
+- A health pool for small/medium/large monsters
+- An array of the health pools
+- Damage upgrades array
+- Shop price array
+- Variables for all the above
+- RNG function for monster health decicison, damage done
+- Monster spawn function
+- Damage dealt and damage upgrade functions
+- Function for on click html action
